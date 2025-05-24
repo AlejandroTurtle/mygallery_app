@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "597033599867",
+    "project_id": "mygallery-8dd89",
+    "storage_bucket": "mygallery-8dd89.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597033599867:android:28762d0acc48849b3433de",
+        "android_client_info": {
+          "package_name": "com.mygallery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhflMaTgQEcuZAH7nbsMZSsq0RzLPRTC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

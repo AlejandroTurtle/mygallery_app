@@ -1,0 +1,40 @@
+export type ExifType = {
+  SubSecTimeOriginal: string;
+  SubSecTimeDigitized: string;
+  SubSecTime: string;
+  DateTimeDigitized: string;
+  Orientation: string;
+  ImageLength: string;
+  GPSProcessingMethod: string;
+  Make: string;
+  GPSLongitudeRef: string;
+  GPSLatitudeRef: string;
+  Flash: string;
+  GPSLatitude: string;
+  ImageWidth: string;
+  GPSDateStamp: string;
+  GPSAltitudeRef: string;
+  WhiteBalance: string;
+  GPSAltitude: string;
+  FocalLength: string;
+  ExposureTime: string;
+  ISOSpeedRatings: string;
+  Latitude: number;
+  DateTime: string;
+  Longitude: number;
+  FNumber: string;
+  Model: string;
+  GPSTimeStamp: string;
+  GPSLongitude: string;
+};
+
+export type PhotoType = {
+  modificationDate: string;
+  size: string | number;
+  mime: string;
+  height: number;
+  width: number;
+  path: string;
+  filename: string;
+  exif?: ExifType;
+};
