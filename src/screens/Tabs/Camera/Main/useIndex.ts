@@ -4,36 +4,47 @@ import {TabsParamList} from '@/src/types/RouteTypes';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {CustomCameraPermission} from '@/src/components/CustomCameraPermission';
 import {useCallback, useState} from 'react';
-import ImagePicker from 'react-native-image-crop-picker';
+import ImagePicker, {Image} from 'react-native-image-crop-picker';
 import {useFocusEffect} from '@react-navigation/native';
+import {PhotoType} from '@/src/types/PhotosType';
+
+type CameraImage = Image & {
+  exif?: {
+    DateTime?: string;
+    Latitude?: number;
+    Longitude?: number;
+    [key: string]: any;
+  };
+};
+
 export const useIndex = () => {
   const navigation = useNavigation<NativeStackNavigationProp<TabsParamList>>();
   const {hasPermission, openSettings} = CustomCameraPermission();
-  const [image, setImage] = useState<any>(null);
+  const [image, setImage] = useState<CameraImage | null>(null);
 
-  const OpenCamera = () => {
+  const OpenCamera = useCallback(() => {
     ImagePicker.openCamera({
       width: 300,
       height: 400,
       includeExif: true,
     })
-      .then(imageCaptured => {
-        console.log('Imagem capturada:', image);
+      .then((imageCaptured: CameraImage) => {
+        console.log('Imagem capturada:', imageCaptured);
         console.log('Dados exif:', imageCaptured.exif);
         setImage(imageCaptured);
       })
-      .catch(error => {
+      .catch((error: Error) => {
         console.log('Erro ao abrir a câmera:', error);
       });
-  };
+  }, []);
 
   useFocusEffect(
     useCallback(() => {
       OpenCamera();
-    }, []),
+    }, [OpenCamera]),
   );
 
-  const handleImageTaken = (capturedImage: any) => {
+  const handleImageTaken = (capturedImage: CameraImage) => {
     setImage(capturedImage);
   };
 

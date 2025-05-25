@@ -9,16 +9,6 @@ type PropsCustomGallery = {
 };
 
 export const CustomGallery = ({photos, onPressPhoto}: PropsCustomGallery) => {
-  const formatarData = (data: string) => {
-    const options: Intl.DateTimeFormatOptions = {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    };
-
-    return new Date(data).toLocaleDateString('pt-BR', options).replace(/de\s+/g, 'de ').replace(/\./g, '');
-  };
-
   return (
     <FlatList
       key={3}

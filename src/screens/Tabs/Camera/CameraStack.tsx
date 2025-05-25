@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Camera} from '.';
+import {Camera} from './Main';
 
 export const CameraStack = () => {
   const Stack = createNativeStackNavigator();

@@ -2,7 +2,6 @@ import React from 'react';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Home} from './Main';
-import {PhotoDetails} from './PhotoDetails';
 
 export const HomeStack = () => {
   const Stack = createNativeStackNavigator();
@@ -14,7 +13,6 @@ export const HomeStack = () => {
         contentStyle: {backgroundColor: '#fff'},
       }}>
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="PhotoDetails" component={PhotoDetails} />
     </Stack.Navigator>
   );
 };
