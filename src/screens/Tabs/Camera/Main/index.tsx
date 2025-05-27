@@ -7,7 +7,6 @@ export const Camera = () => {
   const {hasPermission, openSettings, image, OpenCamera, handleImageTaken, handleTakeAnotherPhoto, savePhoto} = useIndex();
 
   if (hasPermission === null) {
-    console.log('Aguardando permissão...');
     return <ActivityIndicator />;
   }
 

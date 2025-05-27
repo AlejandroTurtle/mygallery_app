@@ -18,11 +18,7 @@ export const PhotoDetails = ({navigation, route}: Props) => {
   const {photo} = route.params;
 
   return (
-    <ScrollView
-      style={styles.container}
-      contentContainerStyle={styles.contentContainer}
-      // opcional: para esconder a barra vertical nativa
-      showsVerticalScrollIndicator={false}>
+    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer} showsVerticalScrollIndicator={false}>
       <CustomHeader title="Detalhes da Foto" goBack={() => navigation.goBack()} />
       <CustomDetailsImage photo={photo} />
     </ScrollView>

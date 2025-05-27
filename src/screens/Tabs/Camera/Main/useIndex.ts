@@ -6,14 +6,12 @@ import {CustomCameraPermission} from '@/src/components/CustomCameraPermission';
 import {useCallback, useState} from 'react';
 import ImagePicker, {Image} from 'react-native-image-crop-picker';
 import {useFocusEffect} from '@react-navigation/native';
-import {PhotoType} from '@/src/types/PhotosType';
 
 type CameraImage = Image & {
   exif?: {
     DateTime?: string;
     Latitude?: number;
     Longitude?: number;
-    [key: string]: any;
   };
 };
 

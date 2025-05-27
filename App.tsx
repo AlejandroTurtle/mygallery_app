@@ -1,5 +1,5 @@
-import React, {useCallback, useEffect} from 'react';
-import {StatusBar, StyleSheet, Text, View} from 'react-native';
+import React, {useEffect} from 'react';
+import {StatusBar, StyleSheet} from 'react-native';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import {Colors} from './src/config';
 import {NavigationContainer} from '@react-navigation/native';

@@ -1,7 +1,6 @@
-/* eslint-disable react/no-unstable-nested-components */
-import React, {useEffect} from 'react';
+import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {View, TouchableOpacity, Image, ImageSourcePropType} from 'react-native';
+import {View, TouchableOpacity, ImageSourcePropType} from 'react-native';
 
 import {Keyboard} from 'react-native';
 import {Colors} from '@/src/config';

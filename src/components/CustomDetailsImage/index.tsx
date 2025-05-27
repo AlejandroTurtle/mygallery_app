@@ -21,15 +21,18 @@ export const CustomDetailsImage = ({photo}: PropsCustomDetailsImage) => {
           <Feather name="calendar" size={24} style={styles.icon} />
           <Text style={styles.text}>{converterData(photo?.exif?.DateTime || '')}</Text>
         </View>
-
-        <View style={styles.row}>
-          <Feather name="map-pin" size={24} style={styles.icon} />
-          <Text style={styles.text}>Latitude: {photo?.exif?.Latitude}</Text>
-        </View>
-        <View style={styles.row}>
-          <Feather name="map-pin" size={24} style={styles.icon} />
-          <Text style={styles.text}>Longitude: {photo?.exif?.Longitude}</Text>
-        </View>
+        {photo?.exif?.Latitude && photo?.exif?.Longitude && (
+          <>
+            <View style={styles.row}>
+              <Feather name="map-pin" size={24} style={styles.icon} />
+              <Text style={styles.text}>Latitude: {photo?.exif?.Latitude}</Text>
+            </View>
+            <View style={styles.row}>
+              <Feather name="map-pin" size={24} style={styles.icon} />
+              <Text style={styles.text}>Longitude: {photo?.exif?.Longitude}</Text>
+            </View>
+          </>
+        )}
       </View>
       {photo?.exif?.Latitude && photo?.exif?.Longitude && <CustomMap latitude={photo?.exif?.Latitude} longitude={photo?.exif?.Longitude} />}
     </View>

@@ -3,6 +3,7 @@ import {CustomHeader} from '@/src/components/CustomHeader';
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {useIndex} from './useIndex';
+import {cleanAllItemAsync} from '@/src/libs/AsyncStorage';
 
 export const Home = () => {
   const {myPhotos, handlePressPhoto} = useIndex();

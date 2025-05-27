@@ -1,3 +1,4 @@
+import {Colors} from '@/src/config';
 import {PhotoType} from '@/src/types/PhotosType';
 import {converterData} from '@/src/utils/ConvertDate';
 import React from 'react';
@@ -7,6 +8,8 @@ type PropsCustomGallery = {
   photos: PhotoType[];
   onPressPhoto: (photo: PhotoType) => void;
 };
+
+const EmptyGalleryComponent = () => <Text style={{color: Colors.black, textAlign: 'center'}}>Voce ainda nao possui fotos</Text>;
 
 export const CustomGallery = ({photos, onPressPhoto}: PropsCustomGallery) => {
   return (
@@ -20,6 +23,7 @@ export const CustomGallery = ({photos, onPressPhoto}: PropsCustomGallery) => {
           <Image source={{uri: item.path}} style={styles.photo} />
         </TouchableOpacity>
       )}
+      ListEmptyComponent={EmptyGalleryComponent}
     />
   );
 };
