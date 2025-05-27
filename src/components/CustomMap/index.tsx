@@ -9,7 +9,7 @@ type MapProps = {
 };
 export const CustomMap = ({longitude, latitude}: MapProps) => {
   const query = `${latitude},${longitude}`;
-  const url = `https://www.google.com/maps/embed/v1/place?key=AIzaSyD_5T_O-mttkb6CSgHRmdKWcSGYA-M2HvQ&q=${query}&zoom=16`;
+  const url = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBKQeKW7R95h24HO6HFr6IbXJ0oKKpuN9k=${query}&zoom=16`;
   const width = 340;
   const height = width * (3 / 4);
   const html = `
